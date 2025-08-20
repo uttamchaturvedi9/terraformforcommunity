@@ -7,8 +7,7 @@ This Terraform project demonstrates how to deploy Azure Resource Groups using a 
 ```
 ├── main.tf                    # Main Terraform configuration
 ├── variables.tf               # Variable definitions
-├── terraform.tfvars.example   # Example variable values
-├── deploy.sh                  # Deployment automation script
+├── terraform.tfvars           # variable values
 ├── modules/                   # Terraform modules
 │   └── resource-group/        # Resource Group module
 │       ├── main.tf           # Module main configuration
@@ -52,10 +51,8 @@ az account set --subscription "your-subscription-id"
 ### 3. Configure Variables
 
 ```bash
-# Copy the example file
-cp terraform.tfvars.example terraform.tfvars
-
 # Edit the file with your values
+
 nano terraform.tfvars
 ```
 
@@ -78,23 +75,6 @@ terraform apply
 ## 🚀 Automated Deployment
 
 Use the provided deployment script for easier management:
-
-```bash
-# Make the script executable
-chmod +x deploy.sh
-
-# Deploy with default terraform.tfvars
-./deploy.sh
-
-# Plan only
-./deploy.sh -p
-
-# Deploy with custom var file
-./deploy.sh -f custom.tfvars
-
-# Destroy resources
-./deploy.sh -d
-```
 
 ## 📝 Configuration Examples
 
